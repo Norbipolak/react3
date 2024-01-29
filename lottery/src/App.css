@@ -1,0 +1,63 @@
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 10px 0;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 15px auto;
+    padding: 15px;
+}
+
+button, input {
+    padding: 8px;
+    display: block;
+    margin: 15px auto;
+}
+/*
+Lottery-numbers egy grid lesz, egy sorban 10 van és van 9 sora, így meg lesznek a megfelelő számok 0-90-ig
+*/
+
+.lottery-numbers {
+    width: 500px;
+    height: 450px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+}
+
+.cell {
+    background-color: #efefef;
+    border: 1px solid #c2c2c2;
+    /*
+    és mivel duplikálodni fognak jobboldalt és alul a margók 
+    ezért felül és jobboldalt -1px, alul és baloldalt pedig 0
+    ->
+    */
+    margin: -1px -1px 0 0;
+    /*
+    középre kell helyeznünk a számokat a borderükön belül 
+    */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.highlighted {
+    background-color: #779dff;
+}
+
+.display {
+    width: 500px;
+    margin: 15px auto;
+    min-height: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
